@@ -18,10 +18,10 @@ export default function parse(expression: string): Options {
 	if (/to|in|as/i.exec(expression)) {
 		const firstPart = expression.slice(0, expression.search(/to|in|as/i)).toUpperCase().trim();
 
-		from = firstPart.replace(/(?<currency_code>[^A-Za-z])/g, '');
+		from = firstPart.replace(/[^\d\.\,\s]+/g, '');
 		to = expression.slice(expression.search(/to|in|as/i) + 2).toUpperCase().trim();
 	} else {
-		from = expression.replace(/(?<currency_code>[^A-Za-z])/g, '');
+		from = expression.replace(/[^\d\.\,\s]+/g, '');
 	}
 
 	if (amount === undefined) {
