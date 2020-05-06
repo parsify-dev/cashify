@@ -11,6 +11,10 @@ import {Rates} from './options';
 */
 export default function getRate(base: string, rates: Rates, from: string | undefined, to: string | undefined): number {
 	if (from && to) {
+		// if `from` equals `to` return `from` directly
+		if (from === to) {
+			return from;
+		}
 		// If `from` equals `base`, return the basic exchange rate for the `to` currency
 		if (from === base && hasKey(rates, to)) {
 			return rates[to];
