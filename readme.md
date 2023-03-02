@@ -149,7 +149,7 @@ You can use `to`, `in` or `as` to separate the expression (case insensitive). Us
 
 ### Integration with [big.js](https://github.com/MikeMcl/big.js/)
 
-[big.js](https://github.com/scurker/currency.js/) is a small JavaScript library for arbitrary-precision decimal arithmetic. You can use it with cashify to make sure you won't run into floating point issues:
+[big.js](https://github.com/MikeMcl/big.js/) is a small JavaScript library for arbitrary-precision decimal arithmetic. You can use it with cashify to make sure you won't run into floating point issues:
 
 ```js
 import {Cashify} from 'cashify';
