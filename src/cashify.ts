@@ -1,5 +1,6 @@
 import {Options} from './lib/options.js';
 import convert from './convert.js';
+import big_convert from './big_convert.js';
 
 export default class Cashify {
 	/**
@@ -28,5 +29,9 @@ export default class Cashify {
 	*/
 	convert(amount: number | string, options?: Partial<Options>): number {
 		return convert(amount, {...this.options, ...options} as Options);
+	}
+
+	big_convert(amount: string, options?: Partial<Options>): string {
+		return big_convert(amount, {...this.options, ...options} as Options);
 	}
 }
